@@ -1,6 +1,15 @@
-void reversePrint(SinglyLinkedListNode* head) {
-        if(head==NULL) return ;
-        reversePrint(head->next) ;
-        cout<<head->data <<endl;
+SinglyLinkedListNode* reverse(SinglyLinkedListNode* head) {
+
+            SinglyLinkedListNode *prev=NULL ,*next;
+
+            while(head!=NULL)
+            {
+                next = head->next ;
+                head->next=prev;
+                prev=head;
+                head = next;
+            }
+
+        return prev;
 }
-//https://www.hackerrank.com/challenges/print-the-elements-of-a-linked-list-in-reverse/problem
+//https://www.hackerrank.com/challenges/reverse-a-linked-list/problem
